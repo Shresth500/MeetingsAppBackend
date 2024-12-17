@@ -93,6 +93,18 @@ builder.Services.AddAutoMapper(cfg =>
 });
 
 
+// Add CORS service
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp",
+        policy =>
+        {
+            policy.WithOrigins(new string[] { "https://localhost:4200" }) // Replace with your allowed origin(s)
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 
 var app = builder.Build();
 
@@ -104,6 +116,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Use the CORS policy
+app.UseCors("AllowAngularApp");
+
 
 app.UseAuthorization();
 

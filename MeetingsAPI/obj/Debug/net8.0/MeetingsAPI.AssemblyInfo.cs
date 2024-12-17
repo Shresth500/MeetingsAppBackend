@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MeetingsAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b424474855e73d5597ef2540f7f21319d97f2502")]
 [assembly: System.Reflection.AssemblyProductAttribute("MeetingsAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MeetingsAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
