@@ -140,3 +140,9 @@ C:\Users\shresth.chomal\source\repos\MeetingsAPI\MeetingsAPI\obj\Debug\net8.0\re
 C:\Users\shresth.chomal\source\repos\MeetingsAPI\MeetingsAPI\obj\Debug\net8.0\MeetingsAPI.pdb
 C:\Users\shresth.chomal\source\repos\MeetingsAPI\MeetingsAPI\obj\Debug\net8.0\MeetingsAPI.genruntimeconfig.cache
 C:\Users\shresth.chomal\source\repos\MeetingsAPI\MeetingsAPI\obj\Debug\net8.0\ref\MeetingsAPI.dll
+C:\Users\shresth.chomal\source\repos\MeetingsAPI\MeetingsAPI\obj\Debug\net8.0\MeetingsAPI.sourcelink.json
+C:\Users\shresth.chomal\source\repos\MeetingsAPI\MeetingsAPI\bin\Debug\net8.0\attendee.json
+C:\Users\shresth.chomal\source\repos\MeetingsAPI\MeetingsAPI\bin\Debug\net8.0\meetings.json
+C:\Users\shresth.chomal\source\repos\MeetingsAPI\MeetingsAPI\bin\Debug\net8.0\users.json
+C:\Users\shresth.chomal\source\repos\MeetingsAPI\MeetingsAPI\bin\Debug\net8.0\users.raw.json
+C:\Users\shresth.chomal\source\repos\MeetingsAPI\MeetingsAPI\bin\Debug\net8.0\Newtonsoft.Json.dll

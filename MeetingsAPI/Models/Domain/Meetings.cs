@@ -19,4 +19,5 @@ namespace MeetingsAPI.Models.Domain
         public List<Attendee>? Attendees { get; set; }
 
     }
+
 }

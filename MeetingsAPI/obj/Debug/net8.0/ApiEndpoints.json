@@ -71,7 +71,7 @@
   {
     "ContainingType": "MeetingsAPI.Controllers.MeetingsController",
     "Method": "UpdateAttendee",
-    "RelativePath": "api/Meetings",
+    "RelativePath": "api/Meetings/{Id}",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -79,6 +79,11 @@
       {
         "Name": "Id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -97,7 +102,7 @@
   {
     "ContainingType": "MeetingsAPI.Controllers.MeetingsController",
     "Method": "DeleteAttendee",
-    "RelativePath": "api/Meetings",
+    "RelativePath": "api/Meetings/{Id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -105,6 +110,11 @@
       {
         "Name": "Id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -129,8 +139,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "meetingRto",
-        "Type": "MeetingsAPI.Models.Dto.AddMeetingRequestRto",
+        "Name": "meetingDto",
+        "Type": "MeetingsAPI.Models.Dto.AddMeetingRequestDto",
         "IsRequired": true
       }
     ],

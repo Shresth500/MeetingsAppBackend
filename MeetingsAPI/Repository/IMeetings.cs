@@ -18,5 +18,6 @@ namespace MeetingsAPI.Repository
 
         Task<Models.Domain.Meetings?> UpdateAsync(int id, string userId, string addedUser);
         Task<Models.Domain.Meetings?> DeleteAsync(int id, string userId);
+        Task<string> getUserId(string email);
     }
 }

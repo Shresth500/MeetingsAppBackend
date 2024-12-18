@@ -20,7 +20,7 @@ namespace MeetingsAPI.Controllers
     }
     public class UpdateQuery
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string action { get; set; }
         public string? userId { get; set; }
     }
@@ -90,7 +90,7 @@ namespace MeetingsAPI.Controllers
         [HttpPost]
         [Route("Add")]
         [Authorize]
-        public async Task<IActionResult> CreateMeeting([FromBody] AddMeetingRequestRto meetingRto)
+        public async Task<IActionResult> CreateMeeting([FromBody] AddMeetingRequestDto meetingDto)
         {
             if (!ModelState.IsValid)
             {
@@ -104,8 +104,28 @@ namespace MeetingsAPI.Controllers
                 return Unauthorized("Email not found in the claims.");
             }
 
+            AddMeetingRequestRto meetingRto = new AddMeetingRequestRto();
+            meetingRto.Name = meetingDto.Name;
+            meetingRto.Description = meetingDto.Description; 
+            meetingRto.endTime = meetingDto.endTime;
+            meetingRto.startTime = meetingDto.startTime;
+            meetingRto.Date = meetingDto.Date;
 
-
+            foreach(var meet in meetingDto.Attendees)
+            {
+                var temp = meet.Email;
+                var user = await _userManager.FindByEmailAsync(temp);
+                if (user != null)
+                {
+                    meetingRto.Attendees = new List<IAddMeetingRequestAttendee>();
+                    var temp2 = new IAddMeetingRequestAttendee
+                    {
+                        ApplicationUserId = user.Id.ToString(),
+                        Email = temp
+                    };
+                    meetingRto.Attendees.Add(temp2);
+                }
+            }
             var meetingsDomain = _mapper.Map<Meetings>(meetingRto);
             meetingsDomain = await _repo.CreateAsync(email,meetingsDomain);
             var meetingsDto = _mapper.Map<MeetingsRto>(meetingsDomain);
@@ -118,11 +138,11 @@ namespace MeetingsAPI.Controllers
         }
 
         [HttpPatch]
-        [Route("")]
+        [Route("{Id:int}")]
         [Authorize]
-        public async Task<IActionResult> UpdateAttendee([FromQuery] UpdateQuery AddAttendee)
+        public async Task<IActionResult> UpdateAttendee([FromRoute] int Id,[FromQuery] UpdateQuery AddAttendee)
         {
-            int meetingId = AddAttendee.Id;
+            int meetingId = Id;
             string addedUserId = AddAttendee.userId;
             if(AddAttendee.action != "add_attendee")
             {
@@ -144,14 +164,14 @@ namespace MeetingsAPI.Controllers
             return Ok(meetingsDto);
         }
         [HttpDelete]
-        [Route("")]
+        [Route("{Id:int}")]
         [Authorize]
-        public async Task<IActionResult> DeleteAttendee([FromQuery] UpdateQuery DeleteAttendee)
+        public async Task<IActionResult> DeleteAttendee([FromRoute] int Id,[FromQuery] UpdateQuery DeleteAttendee)
         {
             var email = User?.FindFirst(ClaimTypes.Email)?.Value;
             var user = await _userManager.FindByEmailAsync(email);
             var userId = user.Id;
-            var data = await _repo.DeleteAsync(DeleteAttendee.Id,userId);
+            var data = await _repo.DeleteAsync(Id,userId);
             var meetingsDto = _mapper.Map<MeetingsRto>(data);
             foreach (var item in meetingsDto.Attendees)
             {

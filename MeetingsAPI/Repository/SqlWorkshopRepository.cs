@@ -22,6 +22,12 @@ namespace MeetingsAPI.Repository
             return data.Email;
         }
 
+        public async Task<string> getUserId(string email)
+        {
+            var data = await _db.Users.Where(a => a.Email == email).FirstOrDefaultAsync();
+            return data.Id;
+        }
+
         async Task<Meetings> IMeetings.CreateAsync(string email,Meetings Meeting)
         {
             var data = _db.Users.Where(a => a.Email == email).FirstOrDefault();

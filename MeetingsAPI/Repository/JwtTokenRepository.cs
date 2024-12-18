@@ -22,7 +22,9 @@ namespace MeetingsAPI.Repository
             // Create claims
             var claims = new List<Claim>();
 
+
             claims.Add(new Claim(ClaimTypes.Email, user.Email));
+            claims.Add(new Claim(JwtRegisteredClaimNames.Sub, user.Id));
 
             //foreach (var role in roles)
             //{

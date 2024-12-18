@@ -1,0 +1,58 @@
+[
+    {
+        "Id": 11,
+        "Name": "Post-training party",
+        "Description": "Cheers! Online party to celebrate successful completion of training.",
+        "Date": "2020-11-05",
+        "startTime": "20:00:00",
+        "endTime": "21:30:00"
+    },
+    {
+        "Id": 12,
+        "Name": "User profile pic",
+        "Description": "Meeting to discuss S3 profile pic edit and upload requirements, and assign tasks",
+        "Date": "2020-10-28",
+        "startTime": "09:30:00",
+        "endTime": "10:00:00"
+    },
+    {
+        "Id":13,
+        "Name": "Admin features",
+        "Description": "Meeting to discuss implementation of Admin features, and assign tasks",
+        "Date": "2020-10-28",
+        "startTime": "09:30:00",
+        "endTime": "10:00:00",
+    },
+    {
+        "Id":14,
+        "Name": "Short-film making workshop",
+        "Description": "Workshop on making short films by various artists at Telstra",
+        "Date" : "2020-10-27",
+        "startTime": "18:00:00",
+        "endTime": "20:00:00",
+    },
+    {
+        "Id":15,
+        "Name": "Rock-solid defence",
+        "Description": "How to tire your opponents into submission yet not break a sweat",
+        "Date": "2020-10-26",
+        "startTime": "16:00:00",
+        "endTime": "17:45:00",
+    },
+    {
+        "Id":16,
+        "Name": "User profile pic - Presentation",
+        "Description": "Presentation on implementation of S3 profile pic edit and upload requirements",
+        "Date": "2020-10-28",
+        "startTime": "15:15:00",
+        "endTime": "16:00:00",
+    },
+    {
+        "Id": 17,
+        "Name": "Admin features - Presentation",
+        "Description": "Presentation on implementation of Admin features",
+        "Date":"2020-10-28",
+        "startTime": "14:30:00",
+        "endTime": "15:15:00",
+    }
+]
