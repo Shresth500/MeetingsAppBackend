@@ -77,7 +77,7 @@ namespace MeetingsAPI.Repository
             }
             if (!string.IsNullOrEmpty(search))
             {
-                query = query.Where(x => x.Description.Contains(search));
+                query = query.Where(x => x.Name.Contains(search));
             }
             var meetings = await query.ToListAsync();
             
